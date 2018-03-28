@@ -19,7 +19,7 @@ public class Teste {
         Menu.gerarProfessores();
         Menu.gerarCursos();
         Menu.gerarSemestres();
-        Menu.gerarDisciplinas();
+        Menu.gerarDisciplinasPrimeiro();
 
         Ind ind = new Ind();
         System.out.println("\nindividuo 1");

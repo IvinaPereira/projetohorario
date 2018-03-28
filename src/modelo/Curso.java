@@ -17,12 +17,13 @@ public class Curso {
     private int qtdSemestre;
     private int id;
     private ArrayList<Semestre> semestres;
+    
     public Curso(String nome, int qtdSemestre) {
         this.nome = nome;
         this.qtdSemestre = qtdSemestre;
         this.id = 1;
     }
-
+      
     public int getId() {
         return id;
     }
@@ -63,5 +64,5 @@ public class Curso {
             this.semestres.get(i).imprimirSemestre();
         }
     }
-
+    
 }

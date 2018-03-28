@@ -26,16 +26,20 @@ public class Menu {
     static ArrayList<Curso> cursos = new ArrayList<>();
     static ArrayList<Semestre> semestres = new ArrayList<>();
 
-
+    
     public static void main(String[] args) throws CloneNotSupportedException {
-        gerarCursos();
-        gerarSemestres();
-        gerarProfessores();
-        gerarDisciplinas();
-        cursos.get(0).imprimirCurso();
+        
+        MeuBanco banco = new MeuBanco();
+        
+//        gerarCursos();
+//        gerarSemestres();
+//        gerarProfessores();
+//        gerarDisciplinasPrimeiro();
+//        gerarDisciplinasSegundo();
+//        cursos.get(0).imprimirCurso();
 //        gerarInd();
-System.out.println("\n\nchamar o gerar pop");
-        gerarPop();
+//        System.out.println("\n\nchamar o gerar pop");
+//        gerarPop();
     }
 
     public static void gerarInd() throws CloneNotSupportedException {
@@ -45,12 +49,12 @@ System.out.println("\n\nchamar o gerar pop");
         copia = copia.clonar(ind);
         System.out.println("imprimindo a copia");
         copia.imprimirInd();
-        copia.setUmGene(0,0,semestres.get(0).getDisciplinas().get(0));
+        copia.setUmGene(0, 0, semestres.get(0).getDisciplinas().get(0));
         System.out.println("imprimindo a copia alterada");
         copia.imprimirInd();
         System.out.println("imprimindo o original");
         ind.imprimirInd();
-        
+
 //        ind.mutarGene();
 //        ind.imprimirInd();
     }
@@ -67,7 +71,7 @@ System.out.println("\n\nchamar o gerar pop");
 ////            for (int i = 0; i < 10; i++) {
             media = pop.getMedia();
             medias.add(media);
-            System.out.println("\n\nmedia "+media);
+            System.out.println("\n\nmedia " + media);
             Collections.sort(pop.getHorarios());
             pop.imprimirPop();
             System.out.println("Tamanho da populacao" + pop.size());
@@ -76,7 +80,7 @@ System.out.println("\n\nchamar o gerar pop");
             pop.imprimirPop();
             System.out.println("Tamanho da populacao" + pop.size());
             pop.gerarCopias();
-            
+
             System.out.println("\n\nprint com as copias");
             pop.imprimirPop();
             System.out.println("Tamanho da populacao" + pop.size());
@@ -104,15 +108,14 @@ System.out.println("\n\nchamar o gerar pop");
             melhores.add(pop.getMelhor().getNivelAptidao());
         }
 //        Collections.sort(pop.getHorarios());
-        
+
         System.out.println("MELHORES INDIVIDUOS");
         System.out.println("MELHORES INDIVIDUOS");
         System.out.println("MELHORES INDIVIDUOS");
         melhores.forEach((melhor) -> {
             System.out.println(melhor);
         });
-        
-        
+
         System.out.println("MEDIAS DOS INDIVIDUOS");
         System.out.println("MEDIAS DOS INDIVIDUOS");
         System.out.println("MEDIAS DOS INDIVIDUOS");
@@ -127,23 +130,43 @@ System.out.println("\n\nchamar o gerar pop");
         System.out.println("Quantidade de iteracoes " + cont);
 //        pop.imprimirPop();
 //            
-       
+
     }
 
-    public static void gerarDisciplinas() {
+    public static void gerarDisciplinasPrimeiro() {
+        ArrayList<Disciplina> disc = new ArrayList<>();
         Disciplina filo = new Disciplina("Filosofia", 1, 1, professores.get(1));
-        disciplinas.add(filo);
+        disc.add(filo);
         Disciplina discreta = new Disciplina("Discreta", 2, 2, professores.get(4));
-        disciplinas.add(discreta);
+        disc.add(discreta);
         Disciplina fsi = new Disciplina("Fundamentos", 2, 3, professores.get(0));
-        disciplinas.add(fsi);
+        disc.add(fsi);
         Disciplina calculo = new Disciplina("Calculo", 2, 4, professores.get(3));
-        disciplinas.add(calculo);
+        disc.add(calculo);
         Disciplina ing = new Disciplina("Inglês", 1, 5, professores.get(2));
-        disciplinas.add(ing);
+        disc.add(ing);
         Disciplina prog = new Disciplina("Programação", 2, 6, professores.get(2));
-        disciplinas.add(prog);
-        semestres.get(0).setDisciplinas(disciplinas);
+        disc.add(prog);
+        semestres.get(0).setDisciplinas(disc);
+        disciplinas.addAll(disc);
+    }
+
+    public static void gerarDisciplinasSegundo() {
+        ArrayList<Disciplina> disc = new ArrayList<>();
+        Disciplina filo = new Disciplina("FCC", 1, 1, professores.get(1));
+        disc.add(filo);
+        Disciplina discreta = new Disciplina("Logica", 2, 2, professores.get(4));
+        disc.add(discreta);
+        Disciplina fsi = new Disciplina("ADM", 2, 3, professores.get(0));
+        disc.add(fsi);
+        Disciplina calculo = new Disciplina("ProgII", 2, 4, professores.get(3));
+        disc.add(calculo);
+        Disciplina ing = new Disciplina("AEDI", 1, 5, professores.get(2));
+        disc.add(ing);
+        Disciplina prog = new Disciplina("Português", 2, 6, professores.get(2));
+        disc.add(prog);
+        semestres.get(1).setDisciplinas(disc);
+        disciplinas.addAll(disc);
     }
 
     public static void gerarProfessores() {
@@ -163,19 +186,39 @@ System.out.println("\n\nchamar o gerar pop");
         disponibilidade = new int[][]{{0, 0, 0, 0, 0}, {0, 0, 1, 0, 1}};
         Professor eduardo = new Professor("Eduardo", disponibilidade, 5);
         professores.add(eduardo);
+
+        disponibilidade = new int[][]{{1, 0, 1, 0, 0}, {1, 1, 0, 0, 1}};
+        Professor viviane = new Professor("Viviane", disponibilidade, 6);
+        professores.add(viviane);
+        disponibilidade = new int[][]{{0, 0, 1, 1, 0}, {0, 1, 1, 1, 1}};
+        Professor edimo = new Professor("Édimo", disponibilidade, 7);
+        professores.add(edimo);
+        disponibilidade = new int[][]{{1, 1, 1, 1, 1}, {0, 1, 1, 0, 0}};
+        Professor piedley = new Professor("Piedley", disponibilidade, 8);
+        professores.add(piedley);
+        disponibilidade = new int[][]{{1, 1, 1, 1, 1}, {0, 1, 1, 0, 1}};
+        Professor marcos = new Professor("Marcos", disponibilidade, 9);
+        professores.add(marcos);
+        disponibilidade = new int[][]{{0, 1, 1, 0, 0}, {1, 0, 1, 0, 1}};
+        Professor fabricio = new Professor("Fabricio", disponibilidade, 10);
+        professores.add(fabricio);
     }
-    
-    public static void gerarCursos(){
+
+    public static void gerarCursos() {
         Curso curso = new Curso("Sistemas de Informação", 2);
         cursos.add(curso);
     }
-    
-    public static void gerarSemestres(){
-        int cursoId = cursos.get(0).getId();       
-        Semestre primeiro = new Semestre(0, cursoId, "Primeiro", 1);
-        semestres.add(primeiro);
-        cursos.get(0).setSemestres(semestres);
-    }
 
+    public static void gerarSemestres() {
+        int cursoId = cursos.get(0).getId();
+        Semestre primeiro = new Semestre(1, cursoId, "Primeiro", 1);
+        semestres.add(primeiro);
+
+        Semestre segundo = new Semestre(2, cursoId, "Segundo", 2);
+        semestres.add(segundo);
+        cursos.get(0).setSemestres(semestres);
+        
+        
+    }
 
 }

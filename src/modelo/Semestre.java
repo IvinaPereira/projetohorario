@@ -25,8 +25,14 @@ public class Semestre {
         this.nome = nome;
         this.numero = numero;
     }
-
     
+    public Semestre(int id, int Curso, Integer numero) {
+        this.id = id;
+        this.Curso = Curso;
+        this.numero = numero;
+    }
+
+        
     public ArrayList<Disciplina> getDisciplinas() {
         return disciplinas;
     }
@@ -68,7 +74,7 @@ public class Semestre {
     }
       
     public void imprimirSemestre(){
-        System.out.println("Id do semestre "+ this.getId());
+        System.out.println("\nId do semestre "+ this.getId());
         System.out.println(""+ this.getNome());
         for (int i = 0; i < disciplinas.size(); i++){
             disciplinas.get(i).imprimirDisciplina();
