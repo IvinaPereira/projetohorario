@@ -12,12 +12,15 @@ import java.util.ArrayList;
  * @author ivina
  */
 public class Semestre {
-    
+
     private int id;
     private int Curso;
     private ArrayList<Disciplina> disciplinas = new ArrayList<>();
     private String nome;
     private Integer numero;
+    
+    private int nivelAptidao;
+            
 
     public Semestre(int id, int Curso, String nome, Integer numero) {
         this.id = id;
@@ -25,14 +28,16 @@ public class Semestre {
         this.nome = nome;
         this.numero = numero;
     }
-    
+
     public Semestre(int id, int Curso, Integer numero) {
         this.id = id;
         this.Curso = Curso;
         this.numero = numero;
     }
 
-        
+    public Semestre() {
+    }
+
     public ArrayList<Disciplina> getDisciplinas() {
         return disciplinas;
     }
@@ -72,14 +77,23 @@ public class Semestre {
     public void setCurso(int Curso) {
         this.Curso = Curso;
     }
-      
-    public void imprimirSemestre(){
-        System.out.println("\nId do semestre "+ this.getId());
-        System.out.println(""+ this.getNome());
-        for (int i = 0; i < disciplinas.size(); i++){
+
+    public int getNivelAptidao() {
+        return nivelAptidao;
+    }
+
+    public void setNivelAptidao(int nivelAptidao) {
+        this.nivelAptidao = nivelAptidao;
+    }
+
+    public void imprimirSemestre() {
+        System.out.println("" + this.getNome()+ " Semestre ----- Aptidao - "+ this.getNivelAptidao());
+        for (int i = 0; i < disciplinas.size(); i++) {
+            if(i == 5){
+                System.out.println("");
+            }
             disciplinas.get(i).imprimirDisciplina();
         }
+        System.out.println("");
     }
-    
-    
 }

@@ -74,7 +74,7 @@ public class Disciplina implements Cloneable {
     }
 
     public void imprimirDisciplina() {
-        System.out.print(" " + this.nome);
+        System.out.print(" - " + this.nome);
     }
     
     public Disciplina deepCopy(Disciplina input) {

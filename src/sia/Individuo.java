@@ -125,7 +125,7 @@ public class Individuo implements Comparable<Individuo>, Cloneable {
 //        System.out.println("chama funcao 3");
 //        nivel += funcao3();
 //        System.out.println("nivel total" + nivel);
-        System.out.println("copia pra poder gerar quantidade " + this.copia);
+//        System.out.println("copia pra poder gerar quantidade " + this.copia);
         if ( nivel > 0 ) {
             this.qtdCopias = nivel / 10;
         }
@@ -140,10 +140,10 @@ public class Individuo implements Comparable<Individuo>, Cloneable {
 //                System.out.println("print do i e j -- "+ i +""+j);
                 if (this.gene[i][j].getId().equals(this.gene[i + 1][j].getId())) {
                     nivel -= 4;
-                    System.out.println("Ocorrencia de " + this.gene[i][j].getNome() + " subtraindo -4");
+//                    System.out.println("Ocorrencia de " + this.gene[i][j].getNome() + " subtraindo -4");
 //                        System.out.println("Ocorrencia de " + this.gene[i+1][j].getNome());
                 } else {
-                    System.out.println("somando mais +4");
+//                    System.out.println("somando mais +4");
                     nivel += 4;
                 }
             }
@@ -157,16 +157,16 @@ public class Individuo implements Comparable<Individuo>, Cloneable {
         for (int i = 0; i < encontros; i++) {
             for (int j = 0; j < diasSemana; j++) {
 //                System.out.println("print do i e j -- "+ i +""+j);
-                if (this.gene[i][j].getProfessor().getDia(i, j)) {
+//                if (this.gene[i][j].getProfessor().getDia(i, j)) {
                     nivel += 3;
-                    System.out.println("Professor " + this.gene[i][j].getProfessor().getNome() + " tem disponibilidade -- somando +3");
-                } else {
-                    System.out.println("Professor " + this.gene[i][j].getProfessor().getNome() + " não tem disponibilidade -- subtraindo -3");
+//                    System.out.println("Professor " + this.gene[i][j].getProfessor().getNome() + " tem disponibilidade -- somando +3");
+//                } else {
+//                    System.out.println("Professor " + this.gene[i][j].getProfessor().getNome() + " não tem disponibilidade -- subtraindo -3");
                     nivel -= 3;
-                }
+//                }
             }
         }
-        System.out.println("nivel retornado" + nivel);
+//        System.out.println("nivel retornado" + nivel);
         return nivel;
     }
 

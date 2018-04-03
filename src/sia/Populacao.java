@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Populacao {
 
     ArrayList<Individuo> horarios = new ArrayList<>();
-    int tamanho = 10;
+    int tamanho = 30;
 
     public Populacao() {
         System.out.println("PRIMEIRA POPULACAO");
@@ -108,14 +108,14 @@ public class Populacao {
     public void mutarPop() {
         for (int i = 0; i < horarios.size(); i++) {
             if (!this.horarios.get(i).getCopia()) {
-                System.out.println("\nImprimindo o individuo antes de mutar");
-                this.horarios.get(i).imprimirInd();
+//                System.out.println("\nImprimindo o individuo antes de mutar");
+//                this.horarios.get(i).imprimirInd();
                 this.horarios.get(i).mutarGene();
-                System.out.println("\nImprimindo o individuo depois da mutação");
-                this.horarios.get(i).imprimirInd();
+//                System.out.println("\nImprimindo o individuo depois da mutação");
+//                this.horarios.get(i).imprimirInd();
             }else{
-                System.out.println("\nImprimindo o individuo que nao foi mutado");
-                this.horarios.get(i).imprimirInd();
+//                System.out.println("\nImprimindo o individuo que nao foi mutado");
+//                this.horarios.get(i).imprimirInd();
             }
         }
     }

@@ -15,23 +15,14 @@ public class Curso {
 
     private String nome;
     private int qtdSemestre;
-    private int id;
+    private int nivelAptidao;
     private ArrayList<Semestre> semestres;
     
     public Curso(String nome, int qtdSemestre) {
         this.nome = nome;
         this.qtdSemestre = qtdSemestre;
-        this.id = 1;
     }
-      
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    
     public String getNome() {
         return nome;
     }
@@ -55,13 +46,21 @@ public class Curso {
     public void setSemestres(ArrayList<Semestre> semestres) {
         this.semestres = semestres;
     }
-    
+
+    public int getNivelAptidao() {
+        return nivelAptidao;
+    }
+
+    public void setNivelAptidao(int nivelAptidao) {
+        this.nivelAptidao = nivelAptidao;
+    }
+       
     public void imprimirCurso() {
-        System.out.println("Imprimindo o curso");
-        System.out.println(this.getNome());
-        System.out.println("Semestres "+ this.getQtdSemestre());
+        System.out.println("\n"+this.getNome() + " --- Semestres "+ this.getQtdSemestre()+"");
+        System.out.println("Aptidao ----- "+ this.nivelAptidao+ "\n");
         for(int i = 0; i < this.semestres.size(); i++){
             this.semestres.get(i).imprimirSemestre();
+            System.out.println("");
         }
     }
     

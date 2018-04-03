@@ -3,10 +3,10 @@ package modelo;
 public class Professor implements Cloneable{
 
     private String nome;
-    private int[][] disponibilidade;
+    private int[] disponibilidade;
     private int id;
 
-    public Professor(String nome, int[][] disponivel, int id) {
+    public Professor(String nome, int[] disponivel, int id) {
         this.nome = nome;
         this.disponibilidade = disponivel;
         this.id = id;
@@ -20,11 +20,11 @@ public class Professor implements Cloneable{
         this.nome = nome;
     }
 
-    public int[][] getDisponibilidade() {
+    public int[] getDisponibilidade() {
         return disponibilidade;
     }
 
-    public void setDisponibilidade(int[][] disponibilidade) {
+    public void setDisponibilidade(int[] disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
 
@@ -36,10 +36,13 @@ public class Professor implements Cloneable{
         this.id = id;
     }
 
-    public boolean getDia(int dia, int horario) {
-        if (this.disponibilidade[dia][horario] == 1) {
+    public boolean getDisponivel(int dia) {
+        System.out.println("disponibilidADE DIA "+ dia + " " + this.disponibilidade[dia]);
+        if (this.disponibilidade[dia] == 1) {
+        System.out.println("");
             return true;
         }
+        System.out.println("");
         return false;
     }
 
