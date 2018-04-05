@@ -26,15 +26,45 @@ public class Menu {
     static ArrayList<Curso> cursos = new ArrayList<>();
     static ArrayList<Semestre> semestres = new ArrayList<>();
 
-    
     public static void main(String[] args) {
 //        Random rand = new Random();
 //        MeuBanco banco = new MeuBanco();
 //        
-        Inddois ind = new Inddois();
-    }
     
-    public static void chamaMenu() throws CloneNotSupportedException{
+    Popdois pop = new Popdois();
+    pop.imprimirPop();
+
+
+    }
+
+    public static void geraIndDois() {
+
+        System.out.println("--------------------");
+        System.out.println("--------------------");
+        System.out.println("--------------------");
+        System.out.println("PRIMEIRO INDIVIDUO");
+        Inddois ind = new Inddois();
+        System.out.println("endereco ind " + ind);
+        System.out.println("--------------------");
+        System.out.println("--------------------");
+        System.out.println("--------------------");
+        System.out.println("SEGUNDO INDIVIDUO");
+        Inddois ind2 = ind.clonar(ind);
+        System.out.println("endereco ind 2" + ind2);
+        System.out.println("endereco ind " + ind);
+        System.out.println("endereco ind 2" + ind2);
+        ind.imprimirGene();
+        ind2.imprimirGene();
+        ind2.gene.get(0).getSemestres().get(0).mutarDisciplinas();
+        ind2.gerarNivelAptidaoCursos();
+        System.out.println("");
+        System.out.println("");
+        System.out.println("IMPRIMINDO DEPOIS DA MUTACAO");
+        ind.imprimirGene();
+        ind2.imprimirGene();
+    }
+
+    public static void chamaMenu() throws CloneNotSupportedException {
 //        gerarCursos();
 //        gerarSemestres();
 //        gerarProfessores();
@@ -47,17 +77,17 @@ public class Menu {
     }
 
     public static void gerarInd() throws CloneNotSupportedException {
-        Individuo ind = new Individuo(true);
-        ind.imprimirInd();
-        Individuo copia = new Individuo(false);
-        copia = copia.clonar(ind);
-        System.out.println("imprimindo a copia");
-        copia.imprimirInd();
-        copia.setUmGene(0, 0, semestres.get(0).getDisciplinas().get(0));
-        System.out.println("imprimindo a copia alterada");
-        copia.imprimirInd();
-        System.out.println("imprimindo o original");
-        ind.imprimirInd();
+//        Individuo ind = new Individuo(true);
+//        ind.imprimirInd();
+//        Individuo copia = new Individuo(false);
+//        copia = copia.clonar(ind);
+//        System.out.println("imprimindo a copia");
+//        copia.imprimirInd();
+//        copia.setUmGene(0, 0, semestres.get(0).getDisciplinas().get(0));
+//        System.out.println("imprimindo a copia alterada");
+//        copia.imprimirInd();
+//        System.out.println("imprimindo o original");
+//        ind.imprimirInd();
 
 //        ind.mutarGene();
 //        ind.imprimirInd();

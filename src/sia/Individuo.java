@@ -22,7 +22,8 @@ import modelo.Disciplina;
  *
  * @author ivina
  */
-public class Individuo implements Comparable<Individuo>, Cloneable {
+public class Individuo implements Comparable<Individuo>{
+//        , Cloneable {
 
     Disciplina gene[][];
     Random rand = new Random();
@@ -254,12 +255,12 @@ public class Individuo implements Comparable<Individuo>, Cloneable {
         return genee;
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        Individuo cloned = (Individuo) super.clone();
-        cloned.setGene((Disciplina[][]) cloned.getGene().clone());
-        return cloned;
-    }
+//    @Override
+//    protected Object clone() throws CloneNotSupportedException {
+//        Individuo cloned = (Individuo) super.clone();
+//        cloned.setGene((Disciplina[][]) cloned.getGene().clone());
+//        return cloned;
+//    }
 
     void setUmGene(int i, int i0, Disciplina get) {
         this.gene[i][i0] = get;

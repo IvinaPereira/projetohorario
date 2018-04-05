@@ -37,12 +37,9 @@ public class Professor implements Cloneable{
     }
 
     public boolean getDisponivel(int dia) {
-        System.out.println("disponibilidADE DIA "+ dia + " " + this.disponibilidade[dia]);
         if (this.disponibilidade[dia] == 1) {
-        System.out.println("");
             return true;
         }
-        System.out.println("");
         return false;
     }
 

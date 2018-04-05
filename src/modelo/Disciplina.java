@@ -11,7 +11,8 @@ import sia.Setor;
  *
  * @author ivina
  */
-public class Disciplina implements Cloneable {
+public class Disciplina {
+//        implements Cloneable {
 
     private Integer id;
     private String nome;
@@ -86,11 +87,11 @@ public class Disciplina implements Cloneable {
         return copy;
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        Disciplina cloned = (Disciplina) super.clone();
-        cloned.setProfessor((Professor) cloned.getProfessor().clone());
-        return cloned;
-    }
+//    @Override
+//    protected Object clone() throws CloneNotSupportedException {
+//        Disciplina cloned = (Disciplina) super.clone();
+//        cloned.setProfessor((Professor) cloned.getProfessor().clone());
+//        return cloned;
+//    }
 
 }
